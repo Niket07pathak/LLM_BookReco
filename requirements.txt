@@ -2,8 +2,6 @@
 Flask
 pandas
 numpy
-matplotlib
-seaborn
 python-dotenv
 gunicorn
 sentence-transformers
@@ -11,12 +9,8 @@ sentence-transformers
 # LangChain + integrations
 langchain
 langchain-community
-langchain-cohere
 langchain-qdrant
 langchain-huggingface
 
 # Qdrant vector DB client
 qdrant-client
-
-# For pulling datasets from KaggleHub (if used)
-kagglehub
