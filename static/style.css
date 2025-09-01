@@ -1,0 +1,141 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e2e8f0);
+  color: #222;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-align: center;
+  color: #1a202c;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+form > div {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #4a5568;
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0f172a;
+}
+
+/* Results */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* fixed 5 columns */
+  gap: 24px;
+  justify-items: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #e2e8f0;
+}
+
+.cap {
+  padding: 12px;
+  font-size: 0.92rem;
+  color: #2d3748;
+}
+
+.muted {
+  color: #777;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

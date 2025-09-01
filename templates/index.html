@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LLM Book Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <h1>LLM Book Recommender</h1>
+
+  <form action="/recommend" method="GET">
+    <div>
+      <label for="query">Please enter a description of a book:</label>
+      <input id="query" name="query" type="text"
+             placeholder="e.g., A story about forgiveness"
+             value="{{ prev_query | default('') }}"
+             required />
+    </div>
+
+    <div>
+      <label for="category">Select a category:</label>
+      <select id="category" name="category">
+        {% set selected_category = prev_category | default('All') %}
+        {% for c in categories %}
+          <option value="{{ c }}" {% if c == selected_category %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="tone">Select an emotional tone:</label>
+      <select id="tone" name="tone">
+        {% set selected_tone = prev_tone | default('All') %}
+        {% for t in tones %}
+          <option value="{{ t }}" {% if t == selected_tone %}selected{% endif %}>{{ t }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <button type="submit">Find recommendations</button>
+    </div>
+  </form>
+
+  {% if results is not none %}
+    {% if results|length == 0 %}
+      <div class="muted">No results.</div>
+    {% else %}
+      <h2>Recommendations</h2>
+      <div class="gallery">
+        {% for thumb, caption in results %}
+          <div class="card">
+            <img src="{{ thumb }}" alt="Book cover" />
+            <div class="cap">{{ caption }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+</body>
+</html>
