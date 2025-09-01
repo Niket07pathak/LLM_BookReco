@@ -1,7 +1,20 @@
+# Core packages
+Flask
 pandas
-langchain-community
-matplotlib
 numpy
-langchain-cohere
-kagglehub
+matplotlib
 seaborn
+python-dotenv
+
+# LangChain + integrations
+langchain
+langchain-community
+langchain-cohere
+langchain-qdrant
+langchain-huggingface
+
+# Qdrant vector DB client
+qdrant-client
+
+# For pulling datasets from KaggleHub (if used)
+kagglehub

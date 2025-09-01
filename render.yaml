@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: llm-book-recommender
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: Qdrant_URL
+        value: {{ QDRANT_URL }}  
+      - key: Qdrant_API_KEY
+        value: {{ QDRANT_API_KEY }}
+      - key: Qdrant_name
+        value: {{ QDRANT_COLLECTION }}
