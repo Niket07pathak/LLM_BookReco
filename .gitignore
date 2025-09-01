@@ -1,0 +1,11 @@
+# IDE settings
+.idea/
+
+# Local database
+chroma_db_local_v2/
+
+# Python virtual environment
+venv/
+
+# Environment variables
+.env
