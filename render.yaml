@@ -3,11 +3,11 @@ services:
     name: llm-book-recommender
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: gunicorn app:app
     envVars:
       - key: Qdrant_URL
-        value: {{ QDRANT_URL }}  
+        value: ""
       - key: Qdrant_API_KEY
-        value: {{ QDRANT_API_KEY }}
+        value: ""
       - key: Qdrant_name
-        value: {{ QDRANT_COLLECTION }}
+        value: ""
